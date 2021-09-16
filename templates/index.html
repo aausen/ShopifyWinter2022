@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>Shopify Winter 2022 Backend Challenge</h1>
-        <p>Please upload an image.</p>
+        <h3>Please upload an image.</h3>
         <form method="POST" action="/" enctype="multipart/form-data">
             <p>
                 <input type="file" name="file" class="form-control" autocomplete="off" required>
@@ -16,5 +16,13 @@
                 <input type="submit" value="Submit">
             </p>
         </form>
+
+        <h1>Uploaded images</h1>
+        {% for img_id, img_name in single_image %}
+        <img src="{{ img_name }}" alt="new_img">
+        <form action="/delete" method="POST"><button type="submit" name="delete-img" value="{{ img_id }}">Delete</button> </form>
+
+        {% endfor %}
+
     </body>
 </html>
