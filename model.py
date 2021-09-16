@@ -11,7 +11,7 @@ class Image(db.Model):
 
     image_id = db.Column(db.Integer, autoincrement = True, primary_key = True)
     image_name = db.Column(db.String)
-    image_self = db.Column(db.String)
+    
 
     def __repr__(self):
         return f"<Image image_id = {self.image_id}, image_name = {self.image_name}, image = {self.image_self}>"

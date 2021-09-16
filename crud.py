@@ -2,11 +2,10 @@
 
 from model import Image, db, connect_to_db
 
-def create_image(image_name, image_self):
+def create_image(image_name):
     """Create and return a new image."""
 
-    image = Image(image_name = image_name,
-                  image_self = image_self)
+    image = Image(image_name = image_name)
 
     db.session.add(image)
     db.session.commit()
